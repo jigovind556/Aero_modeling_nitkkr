@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Account page</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="css/account.css" />
+</head>
+<body>
+
+<!-- Side Navigation -->
+  <!-- Navbar Section -->
+
+
+  <div class="navBottom" style="
+  justify-content: flex-end;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+">
+    <div class="navItem" style="
+    display: flex;
+    justify-content: space-evenly;
+    width: 200px;
+">
+      <!-- <a href="#"><i class="fa-regular fa-circle-user icons" style="color: white;"></i></a> -->
+      <a href="#"><i class="fa-regular fa-heart icons" style="color: white;" ></i></a>
+      <a href="#"><i class="fa-sharp fa-solid fa-basket-shopping icons" style="color: white;"></i><p id="cart_value"></p></a>
+    </div>
+
+    <div class="mobile">
+      <div class="navItem_mobile" id="navbar">
+        <i class="fa-solid fa-magnifying-glass icons"></i>
+        <i class="fa-regular fa-circle-user icons"></i>
+        <i class="fa-regular fa-heart icons"></i>
+        <i class="fa-sharp fa-solid fa-basket-shopping icons"></i>
+      </div>
+      <!-- <i class="fa-solid fa-bars" style="font-size: 22px;" id="bar"></i> -->
+    </div>
+  </div>
+
+  </nav>
+
+<!-- Header -->
+<header class="w3-container w3-theme w3-padding" id="myHeader">
+  <!-- <i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme"></i>  -->
+  <div class="w3-center">
+  <h4>Love what you do</h4>
+  <h1 class="w3-xxxlarge w3-animate-bottom">Hello <span id="user_name"></span> !</h1>    
+  </div>
+
+  <script> 
+    data = JSON.parse(localStorage.getItem("user")).Email;
+    document.getElementById("user_name").innerHTML = data;
+  </script>
+  <br>
+</header>
+
+<!-- Modal -->
+
+
+<div class="w3-row-padding w3-center w3-margin-top">
+<div class="w3-third " >
+  <div class="w3-card w3-container" style="min-height:460px ">
+  <h2>My Details</h2><br>
+  <i class="fa fa-desktop w3-margin-bottom w3-text-theme" style="font-size:120px"></i>
+  <p style="text-align: left;" id="name">Name : </p>
+  <p style="text-align: left;" id="email">Email address : </p>
+  <p style="text-align: left;" id="address">Address : </p>
+  <p style="text-align: left;" id="city">City : </p>
+  <p style="text-align: left;" id="state">State : </p>
+  <p style="text-align: left;" id="mob">Phone number : </p>
+  </div>
+</div>
+
+<div class="w3-third">
+  <div class="w3-card w3-container" style="min-height:460px">
+  
+  <div class="w3-container">
+   
+    <div class="w3-center">
+      <h2>My Transactions</h2>
+      <p w3-class="w3-large">Your transaction details are given here:</p>
+    </div>
+  <div class="w3-responsive w3-card-4">
+  <table class="w3-table w3-striped w3-bordered">
+  <thead>
+  <tr class="w3-theme">
+    <th>Sl no.</th>
+    <th>Product</th>
+    <th>Quantity</th>
+    <th>Amount(Rs)</th>
+    <th>Payment Status</th>
+    <th>Delivery Status</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>1.</td>
+    <td>Tshirt</td>
+    <td>1</td>
+    <td>399</td>
+    <td>done</td>
+    <td>done</td>
+  </tr>
+  <tr class="w3-white">
+    <td>2.</td>
+    <td>Hodie</td>
+    <td>2</td>
+    <td>1400</td>
+    <td>pending</td>
+    <td>--</td>
+  </tr>
+  <tr>
+    <td>3.</td>
+    <td>Cap</td>
+    <td>1</td>
+    <td>250</td>
+    <td>done</td>
+    <td>done</td>
+  </tr>
+  </tbody>
+  </table>
+  </div>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="w3-row-padding"> 
+<div class="w3-container">
+<hr>
+<h2 class="w3-center">Actions</h2>
+<div id="buttons1" class="w3-center">
+  <br>
+  <a href="form.html" class="w3-button w3-theme">Edit Details</a>
+  <a href="merchandise.html" class="w3-button w3-theme-d3 ">Home</a>
+  <a href="merchandise.html" onclick="logout()" class="w3-button w3-theme-d3 ">Log Out</a>
+  <br><br>
+  
+</div>
+<br>
+</div>
+
+<!-- Footer -->
+
+<!-- Script for Sidebar, Tabs, Accordions, Progress bars and slideshows -->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="js/account.js"></script>
+<script>
+
+
+
+
+var mybtn = document.getElementsByClassName("testbtn")[0];
+mybtn.click();
+
+
+
+
+showDivs(1);
+
+
+</script>
+
+</body>
+</html>
